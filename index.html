@@ -690,7 +690,7 @@ function renderVisTable() {
   if(typeof WB !== "undefined") {
     tb.querySelectorAll('img[data-wb]').forEach(function(img){
       var k=img.getAttribute('data-wb');
-      if(WB[k]) img.src=WB[k];
+      if(WB[k]){ img.style.display=''; img.src=WB[k]; }
     });
   }
 }
@@ -881,7 +881,7 @@ function loadJourney(v, btn) {
   // Inject WB images
   if(window.WB) {
     prodEl.querySelectorAll('img[data-wb]').forEach(function(img){
-      var k=img.getAttribute('data-wb'); if(WB[k]) img.src=WB[k];
+      var k=img.getAttribute('data-wb'); if(WB[k]){ img.style.display=''; img.src=WB[k]; }
     });
   }
 
@@ -1366,23 +1366,23 @@ function openInboxItem(){}
           <div class="about-img-stack">
             <!-- Row 1: big featured photo -->
             <div class="about-img tall" style="height:220px;">
-              <img data-wb="hist1" src="" alt="Waltz shop floor 1939" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
+              <img data-wb="hist1" src="images/hist1.jpg" alt="Waltz shop floor 1939" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
               <div class="about-img-caption">Est. 1939 — Wheeling, IL</div>
             </div>
             <!-- Row 2: two side-by-side -->
             <div class="about-img-row">
               <div class="about-img short">
-                <img data-wb="hist2" src="" alt="Early machining operations" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
+                <img data-wb="hist2" src="images/hist2.jpg" alt="Early machining operations" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
                 <div class="about-img-caption">Shop Floor</div>
               </div>
               <div class="about-img short">
-                <img data-wb="hist3" src="" alt="Precision parts production" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
+                <img data-wb="hist3" src="images/hist3.jpg" alt="Precision parts production" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
                 <div class="about-img-caption">Production</div>
               </div>
             </div>
             <!-- Row 3: wide bottom photo -->
             <div class="about-img" style="height:150px;">
-              <img data-wb="hist4" src="" alt="Quality inspection" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
+              <img data-wb="hist4" src="images/hist4.jpg" alt="Quality inspection" onerror="this.parentElement.style.background='#E0E0E0';this.style.display='none'">
               <div class="about-img-caption">Quality & Inspection</div>
             </div>
           </div>
@@ -1454,7 +1454,7 @@ function openInboxItem(){}
       <p class="sec-sub">Six specialized capabilities under one roof — from 5-axis milling to final CMM inspection — built for aerospace, defense, and medical standards.</p>
       <div class="svc-grid">
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="lathe1" src="" alt="CNC Milling" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="lathe1" src="images/lathe1.jpg" alt="CNC Milling" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>5-Axis CNC Milling</h3>
             <p>Complex geometries, tight tolerances, and multi-sided machining in a single setup. Ideal for aerospace structural components.</p>
@@ -1462,7 +1462,7 @@ function openInboxItem(){}
           </div>
         </div>
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="lathe2" src="" alt="CNC Turning" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="lathe2" src="images/lathe2.jpg" alt="CNC Turning" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>Precision CNC Turning</h3>
             <p>Swiss-style and live-tool turning for complex rotational parts. From micro-components to large-diameter shafts.</p>
@@ -1470,7 +1470,7 @@ function openInboxItem(){}
           </div>
         </div>
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="hero" src="" alt="Grinding" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="hero" src="images/hero.jpg" alt="Grinding" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>Precision Grinding</h3>
             <p>Surface, cylindrical, and ID/OD grinding. Superfinish capabilities for critical bearing and sealing surfaces.</p>
@@ -1478,7 +1478,7 @@ function openInboxItem(){}
           </div>
         </div>
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="p08" src="" alt="EDM" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="p08" src="images/p08.jpg" alt="EDM" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>Wire & Sinker EDM</h3>
             <p>Hard metals, complex internal geometry, and zero-burr cutting. For tooling, dies, and ultra-precision aerospace parts.</p>
@@ -1486,7 +1486,7 @@ function openInboxItem(){}
           </div>
         </div>
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="p12" src="" alt="Quality Inspection" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="p12" src="images/p12.jpg" alt="Quality Inspection" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>CMM Quality Inspection</h3>
             <p>Full first-article and in-process CMM inspection. AS9100D-compliant documentation with digital FAI reports delivered instantly.</p>
@@ -1494,7 +1494,7 @@ function openInboxItem(){}
           </div>
         </div>
         <div class="svc-card">
-          <div class="svc-img"><img data-wb="p36" src="" alt="Assembly" ><div class="svc-img-overlay"></div></div>
+          <div class="svc-img"><img data-wb="p36" src="images/p36.jpg" alt="Assembly" ><div class="svc-img-overlay"></div></div>
           <div class="svc-body">
             <h3>Sub-Assembly & Kitting</h3>
             <p>Build-to-print subassemblies with vendor-managed inventory. Single-source solution from raw material to boxed kit.</p>
@@ -1526,7 +1526,7 @@ function openInboxItem(){}
             <div class="catalog-grid" id="catalog-grid" style="grid-template-columns:repeat(4,1fr);gap:12px;">
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p01" src="" alt="Bronze-Tip Coupling" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p01" src="images/p01.jpg" alt="Bronze-Tip Coupling" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Bronze-Tip Coupling</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Bronze / Steel · Turned · Precision Bore</div>
@@ -1534,7 +1534,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p02" src="" alt="Coil Compression Spring" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p02" src="images/p02.jpg" alt="Coil Compression Spring" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Coil Compression Spring</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Spring Steel · CNC Wound · Ground Ends</div>
@@ -1542,7 +1542,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p03" src="" alt="Grooved Drive Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p03" src="images/p03.jpg" alt="Grooved Drive Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Grooved Drive Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Turned · Ground · Keyway</div>
@@ -1550,7 +1550,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p04" src="" alt="Hollow Threaded Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p04" src="images/p04.jpg" alt="Hollow Threaded Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Hollow Threaded Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Alloy Steel · Turned · Thread Milled</div>
@@ -1558,7 +1558,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p05" src="" alt="Dual-Port Manifold" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p05" src="images/p05.jpg" alt="Dual-Port Manifold" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Dual-Port Manifold</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Aluminum 6061 · Milled · Ported · Anodized</div>
@@ -1566,7 +1566,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p06" src="" alt="Disc Plate — Type A" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p06" src="images/p06.jpg" alt="Disc Plate — Type A" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Disc Plate — Type A</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Carbon Steel · Ground · Lapped Faces</div>
@@ -1574,7 +1574,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p07" src="" alt="Disc Plate — Type B" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p07" src="images/p07.jpg" alt="Disc Plate — Type B" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Disc Plate — Type B</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Carbon Steel · Precision Ground</div>
@@ -1582,7 +1582,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p08" src="" alt="Spur Gear with Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p08" src="images/p08.jpg" alt="Spur Gear with Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Spur Gear with Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Hobbed · Heat Treated</div>
@@ -1590,7 +1590,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p09" src="" alt="Flanged Bushing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p09" src="images/p09.jpg" alt="Flanged Bushing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Flanged Bushing</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Bronze / Brass · Turned · Reamed</div>
@@ -1598,7 +1598,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p10" src="" alt="Rotor Disc Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p10" src="images/p10.jpg" alt="Rotor Disc Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Rotor Disc Assembly</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4340 Steel · Ground · Balanced</div>
@@ -1606,7 +1606,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p11" src="" alt="Bearing Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p11" src="images/p11.jpg" alt="Bearing Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Bearing Housing</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Ductile Iron · Bored · Honed · OD Ground</div>
@@ -1614,7 +1614,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p12" src="" alt="Valve Spool" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p12" src="images/p12.jpg" alt="Valve Spool" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Valve Spool</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Turned · Lapped · Ground</div>
@@ -1622,7 +1622,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p13" src="" alt="Threaded Gear Nut" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p13" src="images/p13.jpg" alt="Threaded Gear Nut" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Threaded Gear Nut</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Thread Milled · Hobbed</div>
@@ -1630,7 +1630,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p14" src="" alt="Open Ring Gear" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p14" src="images/p14.jpg" alt="Open Ring Gear" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Open Ring Gear</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">8620 Steel · Hobbed · Case Hardened</div>
@@ -1638,7 +1638,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p15" src="" alt="Bevel Gear with Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p15" src="images/p15.jpg" alt="Bevel Gear with Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Bevel Gear with Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Hobbed · Ground</div>
@@ -1646,7 +1646,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p16" src="" alt="Worm Shaft — Tall" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p16" src="images/p16.jpg" alt="Worm Shaft — Tall" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Worm Shaft — Tall</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4340 Steel · Thread Ground · Hardened</div>
@@ -1654,7 +1654,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p17" src="" alt="Spline Shaft with Gear" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p17" src="images/p17.jpg" alt="Spline Shaft with Gear" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Spline Shaft with Gear</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Alloy Steel · Splined · Hobbed</div>
@@ -1662,7 +1662,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p18" src="" alt="Multi-Flange Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p18" src="images/p18.jpg" alt="Multi-Flange Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Multi-Flange Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Carbon Steel · Turned · Ground</div>
@@ -1670,7 +1670,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p19" src="" alt="Connecting Arm" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p19" src="images/p19.jpg" alt="Connecting Arm" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Connecting Arm</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Milled · Bored · Heat Treat</div>
@@ -1678,7 +1678,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p20" src="" alt="Disc with O-Ring Groove — A" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p20" src="images/p20.jpg" alt="Disc with O-Ring Groove — A" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Disc with O-Ring Groove — A</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Turned · O-Ring Grooved</div>
@@ -1686,7 +1686,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p21" src="" alt="Disc with O-Ring Groove — B" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p21" src="images/p21.jpg" alt="Disc with O-Ring Groove — B" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Disc with O-Ring Groove — B</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Ground · Lapped</div>
@@ -1694,7 +1694,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p22" src="" alt="Large Bell Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p22" src="images/p22.jpg" alt="Large Bell Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Large Bell Housing</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Cast Iron · Bored · Faced · Milled</div>
@@ -1702,7 +1702,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p23" src="" alt="Sprocket Hub Flange" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p23" src="images/p23.jpg" alt="Sprocket Hub Flange" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Sprocket Hub Flange</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Milled · Drilled · Tapped</div>
@@ -1710,7 +1710,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p24" src="" alt="Piston Housing Cylinder" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p24" src="images/p24.jpg" alt="Piston Housing Cylinder" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Piston Housing Cylinder</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Aluminum 6061 · Bored · Honed</div>
@@ -1718,7 +1718,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p25" src="" alt="Multi-Bore Sprocket — Front" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p25" src="images/p25.jpg" alt="Multi-Bore Sprocket — Front" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Multi-Bore Sprocket — Front</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">8620 Steel · Hobbed · Hardened</div>
@@ -1726,7 +1726,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p26" src="" alt="Multi-Bore Sprocket — Back" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p26" src="images/p26.jpg" alt="Multi-Bore Sprocket — Back" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Multi-Bore Sprocket — Back</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">8620 Steel · Ground · Inspected</div>
@@ -1734,7 +1734,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p27" src="" alt="Brass Star Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p27" src="images/p27.jpg" alt="Brass Star Housing" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Brass Star Housing</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">360 Brass · Milled · Tapped · Deburred</div>
@@ -1742,7 +1742,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p28" src="" alt="Brass Cap / Plug" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p28" src="images/p28.jpg" alt="Brass Cap / Plug" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Brass Cap / Plug</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">360 Brass · Turned · Knurled</div>
@@ -1750,7 +1750,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p29" src="" alt="Machined Aluminum Block" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p29" src="images/p29.jpg" alt="Machined Aluminum Block" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Machined Aluminum Block</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">7075-T6 Aluminum · 5-Axis Milled</div>
@@ -1758,7 +1758,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p30" src="" alt="Dual Valve Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p30" src="images/p30.jpg" alt="Dual Valve Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Dual Valve Assembly</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Turned · Lapped</div>
@@ -1766,7 +1766,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p31" src="" alt="AN Fitting / Nozzle" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p31" src="images/p31.jpg" alt="AN Fitting / Nozzle" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">AN Fitting / Nozzle</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Turned · Thread Ground</div>
@@ -1774,7 +1774,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p32" src="" alt="Tube & Flange Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p32" src="images/p32.jpg" alt="Tube & Flange Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Tube & Flange Assembly</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4130 Steel · Turned · Welded · Ground</div>
@@ -1782,7 +1782,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p33" src="" alt="Chrome Locking Rod" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p33" src="images/p33.jpg" alt="Chrome Locking Rod" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Chrome Locking Rod</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">52100 Steel · Ground · Hard Chrome Plated</div>
@@ -1790,7 +1790,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p34" src="" alt="Long Threaded Worm Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p34" src="images/p34.jpg" alt="Long Threaded Worm Shaft" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Long Threaded Worm Shaft</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4340 Steel · Thread Ground · Hardened</div>
@@ -1798,7 +1798,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p35" src="" alt="Precision Bolt" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p35" src="images/p35.jpg" alt="Precision Bolt" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">Precision Bolt</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">Grade 8 Steel · Thread Rolled · Heat Treat</div>
@@ -1806,7 +1806,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p36" src="" alt="6-Bolt Hub Flange" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p36" src="images/p36.jpg" alt="6-Bolt Hub Flange" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">6-Bolt Hub Flange</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">4140 Steel · Milled · Drilled · Tapped</div>
@@ -1814,7 +1814,7 @@ function openInboxItem(){}
         </div>
         <div class="part-card" data-cat="all" onclick="openModal('mo-rfq')">
           <div class="part-img-wrap" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:10px;height:160px;display:flex;align-items:center;justify-content:center;">
-            <img data-wb="p37" src="" alt="SPDR Valve Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
+            <img data-wb="p37" src="images/p37.jpg" alt="SPDR Valve Assembly" style="max-height:150px;max-width:100%;object-fit:contain;padding:8px;">
           </div>
           <h3 style="font-size:12px;font-weight:800;margin:0 0 3px;">SPDR Valve Assembly</h3>
           <div class="part-mat" style="font-size:11px;color:#6b7280;margin-bottom:6px;">303 Stainless · Turned · Lapped · Tested</div>
@@ -3364,7 +3364,7 @@ function switchView(v, btn) {
     var visView = document.getElementById('view-vis');
     if(visView && typeof WB !== "undefined") {
       visView.querySelectorAll('img[data-wb]').forEach(function(img){
-        var k=img.getAttribute('data-wb'); if(WB[k]) img.src=WB[k];
+        var k=img.getAttribute('data-wb'); if(WB[k]){ img.style.display=''; img.src=WB[k]; }
       });
     }
   }
@@ -3899,7 +3899,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('[data-wb]').forEach(function(img){
     var k = img.getAttribute('data-wb');
-    if(WB[k]){ img.src = WB[k]; }
+    if(WB[k]){ img.style.display=''; img.src = WB[k]; }
   });
 
   // catalog images loaded via data-wb injection above
@@ -4089,22 +4089,22 @@ document.addEventListener('DOMContentLoaded', function() {
               <div style="font-size:10px;color:#4b5563;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Products They Viewed</div>
               <div style="display:flex;flex-direction:column;gap:6px;">
                 <div style="display:flex;align-items:center;gap:8px;background:#0f172a;border-radius:4px;padding:5px 8px;">
-                  <img data-wb="p16" src="" alt="Worm Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
+                  <img data-wb="p16" src="images/p16.jpg" alt="Worm Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
                   <div><div style="font-size:11px;font-weight:700;color:#e2e8f0;">Worm Shaft — Tall (p16)</div><div style="font-size:10px;color:#64748b;">4340 Steel · Thread Ground · Hardened</div></div>
                   <div style="margin-left:auto;font-size:10px;color:#a78bfa;font-weight:700;white-space:nowrap;">2:14 ⏱</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;background:#0f172a;border-radius:4px;padding:5px 8px;">
-                  <img data-wb="p17" src="" alt="Spline Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
+                  <img data-wb="p17" src="images/p17.jpg" alt="Spline Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
                   <div><div style="font-size:11px;font-weight:700;color:#e2e8f0;">Spline Shaft with Gear (p17)</div><div style="font-size:10px;color:#64748b;">Alloy Steel · Splined · Hobbed</div></div>
                   <div style="margin-left:auto;font-size:10px;color:#a78bfa;font-weight:700;white-space:nowrap;">1:47 ⏱</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;background:#0f172a;border-radius:4px;padding:5px 8px;">
-                  <img data-wb="p34" src="" alt="Long Worm Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
+                  <img data-wb="p34" src="images/p34.jpg" alt="Long Worm Shaft" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
                   <div><div style="font-size:11px;font-weight:700;color:#e2e8f0;">Long Threaded Worm Shaft (p34)</div><div style="font-size:10px;color:#64748b;">4340 Steel · Thread Ground</div></div>
                   <div style="margin-left:auto;font-size:10px;color:#a78bfa;font-weight:700;white-space:nowrap;">1:32 ⏱</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;background:#0f172a;border-radius:4px;padding:5px 8px;">
-                  <img data-wb="p14" src="" alt="Ring Gear" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
+                  <img data-wb="p14" src="images/p14.jpg" alt="Ring Gear" style="width:36px;height:36px;object-fit:contain;background:#1a1a2e;border-radius:3px;padding:2px;">
                   <div><div style="font-size:11px;font-weight:700;color:#e2e8f0;">Open Ring Gear (p14)</div><div style="font-size:10px;color:#64748b;">8620 Steel · Hobbed · Case Hardened</div></div>
                   <div style="margin-left:auto;font-size:10px;color:#a78bfa;font-weight:700;white-space:nowrap;">0:39 ⏱</div>
                 </div>
